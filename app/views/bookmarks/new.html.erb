@@ -1,0 +1,14 @@
+<h3>Add a movie to your list</h3>
+<div class="container">
+  <div class="row">
+    <div class="col-6 offset-3">
+      <%= simple_form_for [@list, @bookmark] do |f| %>
+        <%= f.input :comment, placeholder: 'Your comment about the movie' %>
+        <%= f.association :movie, prompt: 'Select a movie', input_html: { data: { controller: 'select2' } } %>
+        <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<%= link_to "Go back", lists_path %>
