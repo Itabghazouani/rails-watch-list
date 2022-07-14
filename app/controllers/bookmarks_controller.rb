@@ -10,7 +10,7 @@ class BookmarksController < ApplicationController
   # POST /lists/:list_id/bookmarks
   def create
     @bookmark = Bookmark.new(bookmark_params)
-    @list = @bookmark.list
+    @bookmark.list = @list
     if @bookmark.save
       redirect_to list_path(@list)
     else
